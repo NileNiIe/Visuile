@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.8" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.visuile.Controller">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: black;">
+         <children>
+             <AreaChart fx:id="spectrum" alternativeRowFillVisible="false" animated="false" createSymbols="false" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" legendVisible="false" prefHeight="475.0" prefWidth="800.0" styleClass="bar-chart" verticalGridLinesVisible="false" verticalZeroLineVisible="false">              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+                 <yAxis>
+                     <NumberAxis animated="false" autoRanging="false" minorTickVisible="false" side="LEFT" tickLabelsVisible="false" tickMarkVisible="false" upperBound="55.0" visible="false" />
+                 </yAxis>
+            </AreaChart>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: black;">
+         <children>
+            <Label fx:id="songLabel" layoutX="12.0" layoutY="23.0" prefHeight="36.0" prefWidth="782.0" text="SongTitle" textFill="WHITE">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <ProgressBar fx:id="progressBar" layoutX="14.0" layoutY="83.0" prefHeight="20.0" prefWidth="300.0" progress="0.0" />
+            <Button fx:id="playPause" layoutX="325.0" layoutY="81.0" mnemonicParsing="false" onAction="#toggleSong" text="▶" />
+            <Button fx:id="skipBack" layoutX="360.0" layoutY="81.0" mnemonicParsing="false" onAction="#rewind" text="⏪" />
+            <Button fx:id="skipForward" layoutX="396.0" layoutY="81.0" mnemonicParsing="false" onAction="#forward" text="⏩" />
+            <Button fx:id="styleForward" layoutX="756.0" layoutY="81.0" mnemonicParsing="false" onAction="#styleForward" text="▶" />
+            <Button fx:id="styleBack" layoutX="719.0" layoutY="81.0" mnemonicParsing="false" onAction="#styleRewind" text="◀" />
+            <Slider fx:id="volumeSlider" layoutX="435.0" layoutY="85.0" max="200.0" minorTickCount="1" onDragDetected="#adjustVolume" prefHeight="16.0" prefWidth="278.0" showTickMarks="true" snapToTicks="true" value="100.0" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>
